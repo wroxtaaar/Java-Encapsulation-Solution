@@ -35,46 +35,68 @@ public class CustomTime{
 /*
  * Getters
  */
-    // return the time to the calling method in a three-membered array
-    int[] getTime(){
-        return new int[] {hour, minute, second};
+    public int getHour() {
+        return hour;
+    }
+
+    public int getMinute() {
+        return minute;
+    }
+
+    public int getSecond() {
+        return second;
     }
 
 
 /*
  * Setters
  */
-    // set the time to the time specified by the parameters
-    void setTime(int newHour, int newMinute, int newSecond){
-		if (newHour >= 0 && newHour <= MAX_HOURS) {
-			hour = newHour;
-		}
-		else {
-			System.out.println("Error: hour must be between 0 and 23 inclusive!");
-			hour = 0;
-		}
-		
-		if (newMinute >= 0 && newMinute <= MAX_MINS) {
-			minute = newMinute;
-		}
-		else {
-			System.out.println("Error: minute must be between 0 and 59 inclusive!");
-			minute = 0;
-		}
-		
-		if (newSecond >= 0 && newSecond <= MAX_SECS) {
-			second = newSecond;
-		}
-		else {
-			System.out.println("Error: second must be between 0 and 59 inclusive!");
-			second = 0;
-		}
+    public void setHour(int hour) {
+        if (hour >= 0 && hour <= MAX_HOURS) {
+            this.hour = hour;
+        }
+        else {
+            System.out.println("Error: hour must be between 0 and 23 inclusive!");
+            hour = 0;
+        }
+    }
+
+    public void setMinute(int minute) {
+        if (minute >= 0 && minute <= MAX_MINS) {
+            this.minute = minute;
+        }
+        else {
+            System.out.println("Error: minute must be between 0 and 59 inclusive!");
+            minute = 0;
+        }
+    }
+
+    public void setSecond(int second) {
+        if (second >= 0 && second <= MAX_SECS) {
+            this.second = second;
+        }
+        else {
+            System.out.println("Error: second must be between 0 and 59 inclusive!");
+            second = 0;
+        }
     }
 
 
 /*
  * Methods
  */
+   // set the time to the time specified by the parameters
+   void setTime(int newHour, int newMinute, int newSecond){
+        setHour(newHour);
+        setMinute(newMinute);
+        setSecond(newSecond);
+    }
+
+    // return the time to the calling method in a three-membered array
+    int[] getTime(){
+        return new int[] {hour, minute, second};
+    }
+
     // increment the current time by one second
     void incrementTime(){
         second = ++second % (MAX_SECS + 1);

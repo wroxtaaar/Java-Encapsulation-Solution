@@ -7,7 +7,7 @@ public class Snake {
  */
     private final String color;
     private int length;
-    private String currentDirection;
+    private String direction;
 
 
 /*
@@ -20,7 +20,7 @@ public class Snake {
     }
 
     public Snake(String direction){
-        this("GREEN",1, direction);
+        this("GREEN",3, direction);
     }
 
 
@@ -35,8 +35,8 @@ public class Snake {
         return length;
     }
 
-    public String getCurrentDirection() {
-        return currentDirection;
+    public String getDirection() {
+        return direction;
     }
 
 
@@ -47,7 +47,7 @@ public class Snake {
         if (!"EAST".equals(direction) && !"WEST".equals(direction) && !"NORTH".equals(direction) && !"SOUTH".equals(direction)){
             System.out.println("Error: Invalid Input direction!");
         }else{
-            currentDirection = direction;
+            this.direction = direction;
         }
     }
 
@@ -63,35 +63,35 @@ public class Snake {
     }
 
     public void turnLeft(){
-        switch(currentDirection){
+        switch(direction){
             case "EAST":
-                currentDirection = "NORTH";
+                direction = "NORTH";
             break;
             case "WEST":
-                currentDirection = "SOUTH";
+                direction = "SOUTH";
             break;
             case "NORTH":
-                currentDirection = "EAST";
+                direction = "EAST";
             break;
             case "SOUTH":
-                currentDirection = "WEST";
+                direction = "WEST";
             break;
         }
     }
 
     public void turnRight(){
-        switch(currentDirection){
+        switch(direction){
             case "EAST":
-                currentDirection = "SOUTH";
+                direction = "SOUTH";
             break;
             case "WEST":
-                currentDirection = "NORTH";
+                direction = "NORTH";
             break;
             case "NORTH":
-                currentDirection = "WEST";
+                direction = "WEST";
             break;
             case "SOUTH":
-                currentDirection = "EAST";
+                direction = "EAST";
             break;
         }
     }
