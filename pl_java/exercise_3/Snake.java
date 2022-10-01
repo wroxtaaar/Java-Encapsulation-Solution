@@ -5,7 +5,7 @@ public class Snake {
 /*
  * Attributes
  */
-    private String color;
+    private final String color;
     private int length;
     private String currentDirection;
 
