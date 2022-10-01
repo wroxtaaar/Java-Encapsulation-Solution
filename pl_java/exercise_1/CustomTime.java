@@ -7,9 +7,9 @@ public class CustomTime{
 /*
  * Constants
  */
-    final int MAX_HOURS = 23;
-	final int MAX_MINS = 59;
-	final int MAX_SECS = 59;
+    final static int MAX_HOURS = 23;
+	final static int MAX_MINS = 59;
+	final static int MAX_SECS = 59;
 
 
 /*
@@ -23,6 +23,13 @@ public class CustomTime{
 /*
  * Constructors
  */
+    // set the time to the time specified by the parameters
+    public CustomTime(int hour, int minute, int second){
+        setHour(hour);
+        setMinute(minute);
+        setSecond(second);
+    }
+    
     // Default constructor which returns current time on initialization
     public CustomTime(){
         LocalTime time = LocalTime.now();
@@ -85,13 +92,6 @@ public class CustomTime{
 /*
  * Methods
  */
-   // set the time to the time specified by the parameters
-   void setTime(int newHour, int newMinute, int newSecond){
-        setHour(newHour);
-        setMinute(newMinute);
-        setSecond(newSecond);
-    }
-
     // return the time to the calling method in a three-membered array
     int[] getTime(){
         return new int[] {hour, minute, second};
