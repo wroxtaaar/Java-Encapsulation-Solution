@@ -71,10 +71,10 @@ public class Snake {
                 direction = "SOUTH";
             break;
             case "NORTH":
-                direction = "EAST";
+                direction = "WEST";
             break;
             case "SOUTH":
-                direction = "WEST";
+                direction = "EAST";
             break;
         }
     }
@@ -88,10 +88,10 @@ public class Snake {
                 direction = "NORTH";
             break;
             case "NORTH":
-                direction = "WEST";
+                direction = "EAST";
             break;
             case "SOUTH":
-                direction = "EAST";
+                direction = "WEST";
             break;
         }
     }
